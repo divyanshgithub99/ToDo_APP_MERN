@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.App {
+    text-align: center;
+}
+
+.task {
+    border: 1px solid #ccc;
+    padding: 16px;
+    margin: 8px;
+    border-radius: 4px;
+    background: #f9f9f9;
+}
+
+.task h4 {
+    margin: 0 0 8px 0;
+}
+
+.task p {
+    margin: 4px 0;
+}
