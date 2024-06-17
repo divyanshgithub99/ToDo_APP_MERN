@@ -2,8 +2,8 @@ import express from 'express';
 import cors from 'cors';
 import { createServer } from 'http';
 import { Server } from 'socket.io';
-import connectDB from './db';
-import Task from './models/Task';
+import connectDB from './src/db';
+import Task from './src/models/Task';
 
 const app = express();
 const port = 5000;
