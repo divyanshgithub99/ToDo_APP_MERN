@@ -1,4 +1,5 @@
-import express from 'express';
+const express = require('express');
+import { Request, Response } from 'express';
 import cors from 'cors';
 import { createServer } from 'http';
 import { Server } from 'socket.io';
@@ -23,7 +24,7 @@ const io = new Server(server, {
 connectDB();
 
 // Get all tasks
-app.get('/api/tasks', async (req, res) => {
+app.get('/api/tasks', async (req: Request, res: Response) => {
   try {
     const tasks = await Task.find();
     const formattedTasks = {
@@ -38,7 +39,7 @@ app.get('/api/tasks', async (req, res) => {
 });
 
 // Create a new task
-app.post('/api/tasks/create', async (req, res) => {
+app.post('/api/tasks/create', async (req: Request, res: Response) => {
   try {
     const { content, description } = req.body;
     const newTask = new Task({ content, description, status: 'todo', createdAt: new Date() });
@@ -51,7 +52,7 @@ app.post('/api/tasks/create', async (req, res) => {
 });
 
 // Update task status
-app.post('/api/tasks/update', async (req, res) => {
+app.post('/api/tasks/update', async (req: Request, res: Response) => {
   try {
     const { taskId, newStatus } = req.body;
     const updatedTask = await Task.findByIdAndUpdate(
@@ -71,7 +72,7 @@ app.post('/api/tasks/update', async (req, res) => {
 });
 
 // Delete a task
-app.delete('/api/tasks/delete/:id', async (req, res) => {
+app.delete('/api/tasks/delete/:id', async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
     await Task.findByIdAndDelete(id);
@@ -83,7 +84,7 @@ app.delete('/api/tasks/delete/:id', async (req, res) => {
 });
 
 // Add a comment to a task
-app.post('/api/tasks/comment', async (req, res) => {
+app.post('/api/tasks/comment', async (req: Request, res: Response) => {
   try {
     const { taskId, text } = req.body;
     const comment = { text, createdAt: new Date() };
