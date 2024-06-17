@@ -50,7 +50,7 @@ const CustomTypography = styled(Typography)(({ theme }) => ({
   },
 }));
 
-const socket = io('http://localhost:5000');
+const socket = io('https://prac-vercel-backedn-3n61.vercel.app/');
 
 const NewDnd: React.FC = () => {
   const [tasks, setTasks] = useState<Tasks>({ 'todo': [], 'inProgress': [], 'completed': [] });
@@ -80,7 +80,7 @@ const NewDnd: React.FC = () => {
 
   useEffect(() => {
     // Fetch tasks from the backend
-    axios.get('http://localhost:5000/api/tasks')
+    axios.get('https://prac-vercel-backedn-3n61.vercel.app//api/tasks')
       .then(response => {
         setTasks(response.data);
       })
@@ -139,7 +139,7 @@ const NewDnd: React.FC = () => {
     });
 
     // API call to update task status
-    axios.post('http://localhost:5000/api/tasks/update', {
+    axios.post('https://prac-vercel-backedn-3n61.vercel.app//api/tasks/update', {
       taskId: movedTask._id,
       newStatus: destinationColumn,
     }).then(response => {
@@ -152,7 +152,7 @@ const NewDnd: React.FC = () => {
   const createTask = () => {
     if (!newTaskContent || !newTaskDescription) return;
 
-    axios.post('http://localhost:5000/api/tasks/create', {
+    axios.post('https://prac-vercel-backedn-3n61.vercel.app//api/tasks/create', {
       content: newTaskContent,
       description: newTaskDescription,
     }).then(response => {
@@ -167,7 +167,7 @@ const NewDnd: React.FC = () => {
   };
 
   const handleDeleteTask = (taskId: string) => {
-    axios.delete(`http://localhost:5000/api/tasks/delete/${taskId}`)
+    axios.delete(`https://prac-vercel-backedn-3n61.vercel.app//api/tasks/delete/${taskId}`)
       .then(response => {
         setTasks(prevTasks => {
           const updatedTasks = { ...prevTasks };
@@ -187,7 +187,7 @@ const NewDnd: React.FC = () => {
   const handleAddComment = () => {
     if (!newComment || !selectedTaskId) return;
 
-    axios.post('http://localhost:5000/api/tasks/comment', {
+    axios.post('https://prac-vercel-backedn-3n61.vercel.app//api/tasks/comment', {
       taskId: selectedTaskId,
       text: newComment,
     }).then(response => {
