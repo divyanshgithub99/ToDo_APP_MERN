@@ -37,11 +37,13 @@ o	The project includes drag-and-drop functionality, allowing you to move tasks b
 •	Add Comments:
 
 o	You can add comments to tasks after they are created.
+
 Additional Information
 
 •	Ensure MongoDB is running and properly connected for the backend to function correctly.
 
 •	Customize the configurations in the .env file as needed.
+
 Tech Stack
 
 •	MongoDB: Database
@@ -50,5 +52,7 @@ Tech Stack
 •	Node.js: Runtime environment
 
 For any issues or contributions, please create a pull request or contact the project maintainers.
+
+
 Happy coding!
 
