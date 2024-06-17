@@ -1,5 +1,8 @@
 Task Manager MERN Project
 
+![image](https://github.com/divyanshgithub99/ToDo_APP_MERN/assets/109071759/3da35b67-0462-444d-a55f-f1c76ba8c940)
+
+
 This is a Task Manager project built using the MERN stack (MongoDB, Express.js, React, and Node.js). Follow the instructions below to set up and run the project.
 Setup Instructions
 1.	Frontend Setup:
@@ -18,7 +21,7 @@ o	Execute the following command to start the backend:
 npm start
 
 3.	Running the Project:
-o	The frontend is hosted on Vercel. You can access it using the following link: Task Manager Frontend
+o	The frontend is hosted on Vercel. You can access it using the following link: https://to-do-app-mern-frontend.vercel.app/
 
 o	Note that the backend is not currently deployed. To see the project in action using the Vercel frontend, start the backend server locally on port 5000. The Vercel frontend will work with the locally running backend.
 
